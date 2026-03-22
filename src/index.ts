@@ -1,4 +1,5 @@
 import bubble from "./sorts/bubble";
+import merge from "./sorts/merge";
 import selection from "./sorts/selection";
 
 export type InternalSortFunction = <T>(
@@ -22,10 +23,14 @@ export default function sortism<T = any>(array: T[], func?: (v: T) => number) {
         /**
          * Time: O(n^2)
          */
-        "bubble": ((order) => bubble(array, f, order)) as ExportSortFunction<T>,
+        "bubble": (order => bubble(array, f, order)) as ExportSortFunction<T>,
         /**
          * Time: O(n^2)
          */
-        "selection": ((order) => selection(array, f, order)) as ExportSortFunction<T>,
+        "selection": (order => selection(array, f, order)) as ExportSortFunction<T>,
+        /**
+         * Time: O(n log n)
+         */
+        "merge": (order => merge(array, f, order)) as ExportSortFunction<T>,
     };
 }
