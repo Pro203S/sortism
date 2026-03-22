@@ -1,8 +1,10 @@
 import bogo from "./sorts/bogo";
 import bubble from "./sorts/bubble";
 import merge from "./sorts/merge";
+import miracle from "./sorts/miracle";
 import quick from "./sorts/quick";
 import selection from "./sorts/selection";
+import stalin from "./sorts/stalin";
 /**
  * You can use sortism through this function.
  */
@@ -28,6 +30,14 @@ export default function sortism(array, func) {
         /**
          * Time: O(n * n!)
          */
-        "bogo": (order => bogo(array, f, order))
+        "bogo": (order => bogo(array, f, order)),
+        /**
+         * Time: O(N)
+         */
+        "stalin": (order => stalin(array, f, order)),
+        /**
+         * Time: O(Infinity)
+         */
+        "miracle": (order => miracle(array, f, order)),
     };
 }

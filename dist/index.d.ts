@@ -24,4 +24,12 @@ export default function sortism<T = any>(array: T[], func?: (v: T) => number): {
      * Time: O(n * n!)
      */
     bogo: ExportSortFunction<T>;
+    /**
+     * Time: O(N)
+     */
+    stalin: ExportSortFunction<T>;
+    /**
+     * Time: O(Infinity)
+     */
+    miracle: ExportSortFunction<T>;
 };

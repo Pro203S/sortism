@@ -1,8 +1,10 @@
 import bogo from "./sorts/bogo";
 import bubble from "./sorts/bubble";
 import merge from "./sorts/merge";
+import miracle from "./sorts/miracle";
 import quick from "./sorts/quick";
 import selection from "./sorts/selection";
+import stalin from "./sorts/stalin";
 
 export type InternalSortFunction = <T>(
     arr: T[],
@@ -41,6 +43,14 @@ export default function sortism<T = any>(array: T[], func?: (v: T) => number) {
         /**
          * Time: O(n * n!)
          */
-        "bogo": (order => bogo(array, f, order) ) as ExportSortFunction<T>
+        "bogo": (order => bogo(array, f, order)) as ExportSortFunction<T>,
+        /**
+         * Time: O(N)
+         */
+        "stalin": (order => stalin(array, f, order)) as ExportSortFunction<T>,
+        /**
+         * Time: O(Infinity)
+         */
+        "miracle": (order => miracle(array, f, order)) as ExportSortFunction<T>,
     };
 }
