@@ -33,4 +33,52 @@ sortism(arr).bubble("ascending");
 sortism(arr).selection("descending");
 ```
 
+## 자세한 사용법
+
+- Object에서 정렬하기
+```typescript
+const arr = [
+    {
+        "index": 2
+    },
+    {
+        "index": 0
+    },
+    {
+        "index": 2
+    },
+    {
+        "index": 6
+    },
+    {
+        "index": 4
+    },
+    {
+        "index": 3
+    }
+];
+
+// 버블 정렬, 오름차순
+sortism(arr).bubble("ascending");
+
+/*
+returns:
+[
+  {
+    index: 0,
+  }, {
+    index: 2,
+  }, {
+    index: 2,
+  }, {
+    index: 3,
+  }, {
+    index: 4,
+  }, {
+    index: 6,
+  }
+]
+*/
+```
+
 지금 바로 설치해서 사용해보세요!
