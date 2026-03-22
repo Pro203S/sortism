@@ -5,6 +5,7 @@ import miracle from "./sorts/miracle";
 import quick from "./sorts/quick";
 import selection from "./sorts/selection";
 import stalin from "./sorts/stalin";
+import thanos from "./sorts/thanos";
 
 export type InternalSortFunction = <T>(
     arr: T[],
@@ -52,5 +53,9 @@ export default function sortism<T = any>(array: T[], func?: (v: T) => number) {
          * Time: O(Infinity)
          */
         "miracle": (order => miracle(array, f, order)) as ExportSortFunction<T>,
+        /**
+         * Time: O(N)
+         */
+        "thanos": (order => thanos(array, f, order)) as ExportSortFunction<T>,
     };
 }

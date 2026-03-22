@@ -32,4 +32,8 @@ export default function sortism<T = any>(array: T[], func?: (v: T) => number): {
      * Time: O(Infinity)
      */
     miracle: ExportSortFunction<T>;
+    /**
+     * Time: O(N)
+     */
+    thanos: ExportSortFunction<T>;
 };

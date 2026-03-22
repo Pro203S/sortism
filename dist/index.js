@@ -5,6 +5,7 @@ import miracle from "./sorts/miracle";
 import quick from "./sorts/quick";
 import selection from "./sorts/selection";
 import stalin from "./sorts/stalin";
+import thanos from "./sorts/thanos";
 /**
  * You can use sortism through this function.
  */
@@ -39,5 +40,9 @@ export default function sortism(array, func) {
          * Time: O(Infinity)
          */
         "miracle": (order => miracle(array, f, order)),
+        /**
+         * Time: O(N)
+         */
+        "thanos": (order => thanos(array, f, order)),
     };
 }
