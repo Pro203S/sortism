@@ -1,5 +1,6 @@
 {
   "name": "sortism",
+  "description": "The easiest way to sort an array.",
   "main": "./dist/index.js",
   "version": "1.0.0",
   "type": "module",
@@ -8,12 +9,18 @@
     "sort",
     "algorithm"
   ],
+  "homepage": "https://github.com/Pro203S/sortism#readme",
   "scripts": {
     "watch": "tsc --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pro203S/sortism.git"
   },
   "devDependencies": {
     "@types/bun": "latest"
   },
+  "license": "MIT",
   "peerDependencies": {
     "typescript": "^5"
   }
