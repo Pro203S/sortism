@@ -1,5 +1,5 @@
 export type InternalSortFunction = <T>(arr: T[], func: (v: T) => number, order: "ascending" | "descending") => T[] | Promise<T[]>;
-export type ExportSortFunction<T> = (order: "ascending" | "descending", func?: (v: T) => number) => T[] | Promise<T[]>;
+export type SortFunction<T> = (order: "ascending" | "descending", func?: (v: T) => number) => T[] | Promise<T[]>;
 /**
  * You can use sortism through this function.
  */
@@ -7,33 +7,37 @@ export default function sortism<T = any>(array: T[], func?: (v: T) => number): {
     /**
      * Time: O(n^2)
      */
-    bubble: ExportSortFunction<T>;
+    bubble: SortFunction<T>;
     /**
      * Time: O(n^2)
      */
-    selection: ExportSortFunction<T>;
+    selection: SortFunction<T>;
     /**
      * Time: O(n log n)
      */
-    merge: ExportSortFunction<T>;
+    merge: SortFunction<T>;
     /**
      * Time: O(n log n)
      */
-    quick: ExportSortFunction<T>;
+    quick: SortFunction<T>;
     /**
      * Time: O(n * n!)
      */
-    bogo: ExportSortFunction<T>;
+    bogo: SortFunction<T>;
     /**
      * Time: O(N)
      */
-    stalin: ExportSortFunction<T>;
+    stalin: SortFunction<T>;
     /**
      * Time: O(Infinity)
      */
-    miracle: ExportSortFunction<T>;
+    miracle: SortFunction<T>;
     /**
      * Time: O(N)
      */
-    thanos: ExportSortFunction<T>;
+    thanos: SortFunction<T>;
+    /**
+     * Time: O(max(N, maxValue))
+     */
+    sleep: SortFunction<T>;
 };

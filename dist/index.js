@@ -4,6 +4,7 @@ import merge from "./sorts/merge";
 import miracle from "./sorts/miracle";
 import quick from "./sorts/quick";
 import selection from "./sorts/selection";
+import sleep from "./sorts/sleep";
 import stalin from "./sorts/stalin";
 import thanos from "./sorts/thanos";
 /**
@@ -47,5 +48,6 @@ export default function sortism(array, func) {
         /**
          * Time: O(max(N, maxValue))
          */
+        "sleep": (order => sleep(array, f, order))
     };
 }

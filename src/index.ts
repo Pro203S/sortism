@@ -4,6 +4,7 @@ import merge from "./sorts/merge";
 import miracle from "./sorts/miracle";
 import quick from "./sorts/quick";
 import selection from "./sorts/selection";
+import sleep from "./sorts/sleep";
 import stalin from "./sorts/stalin";
 import thanos from "./sorts/thanos";
 
@@ -13,7 +14,7 @@ export type InternalSortFunction = <T>(
     order: "ascending" | "descending",
 ) => T[] | Promise<T[]>;
 
-export type ExportSortFunction<T> = (
+export type SortFunction<T> = (
     order: "ascending" | "descending",
     func?: (v: T) => number,
 ) => T[] | Promise<T[]>;
@@ -28,37 +29,38 @@ export default function sortism<T = any>(array: T[], func?: (v: T) => number) {
         /**
          * Time: O(n^2)
          */
-        "bubble": (order => bubble(array, f, order)) as ExportSortFunction<T>,
+        "bubble": (order => bubble(array, f, order)) as SortFunction<T>,
         /**
          * Time: O(n^2)
          */
-        "selection": (order => selection(array, f, order)) as ExportSortFunction<T>,
+        "selection": (order => selection(array, f, order)) as SortFunction<T>,
         /**
          * Time: O(n log n)
          */
-        "merge": (order => merge(array, f, order)) as ExportSortFunction<T>,
+        "merge": (order => merge(array, f, order)) as SortFunction<T>,
         /**
          * Time: O(n log n)
          */
-        "quick": (order => quick(array, f, order)) as ExportSortFunction<T>,
+        "quick": (order => quick(array, f, order)) as SortFunction<T>,
         /**
          * Time: O(n * n!)
          */
-        "bogo": (order => bogo(array, f, order)) as ExportSortFunction<T>,
+        "bogo": (order => bogo(array, f, order)) as SortFunction<T>,
         /**
          * Time: O(N)
          */
-        "stalin": (order => stalin(array, f, order)) as ExportSortFunction<T>,
+        "stalin": (order => stalin(array, f, order)) as SortFunction<T>,
         /**
          * Time: O(Infinity)
          */
-        "miracle": (order => miracle(array, f, order)) as ExportSortFunction<T>,
+        "miracle": (order => miracle(array, f, order)) as SortFunction<T>,
         /**
          * Time: O(N)
          */
-        "thanos": (order => thanos(array, f, order)) as ExportSortFunction<T>,
+        "thanos": (order => thanos(array, f, order)) as SortFunction<T>,
         /**
          * Time: O(max(N, maxValue))
          */
+        "sleep": (order => sleep(array, f, order)) as SortFunction<T>
     };
 }
