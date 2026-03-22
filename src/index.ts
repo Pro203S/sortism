@@ -1,4 +1,5 @@
 import bubble from "./sorts/bubble";
+import selection from "./sorts/selection";
 
 export type InternalSortFunction = <T>(
     arr: T[],
@@ -11,15 +12,20 @@ export type ExportSortFunction<T> = (
     func?: (v: T) => number,
 ) => T[];
 
-export type Sortism<T = any> = {
-    bubble: ExportSortFunction<T>;
-};
-
 /**
  * You can use sortism through this function.
  */
-export default function sortism<T = any>(array: T[]): Sortism<T> {
+export default function sortism<T = any>(array: T[], func?: (v: T) => number) {
+    const f = func ?? (v => v as number);
+
     return {
-        "bubble": (order, func) => bubble(array, func ?? (v => v as number), order)
+        /**
+         * Time: O(n^2)
+         */
+        "bubble": ((order) => bubble(array, f, order)) as ExportSortFunction<T>,
+        /**
+         * Time: O(n^2)
+         */
+        "selection": ((order) => selection(array, f, order)) as ExportSortFunction<T>,
     };
 }
