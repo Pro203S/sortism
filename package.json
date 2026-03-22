@@ -1,8 +1,13 @@
 {
   "name": "sortism",
   "main": "./dist/index.js",
+  "version": "1.0.0",
   "type": "module",
   "private": true,
+  "keywords": [
+    "sort",
+    "algorithm"
+  ],
   "scripts": {
     "watch": "tsc --watch"
   },
