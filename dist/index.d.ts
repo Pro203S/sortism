@@ -20,4 +20,8 @@ export default function sortism<T = any>(array: T[], func?: (v: T) => number): {
      * Time: O(n log n)
      */
     quick: ExportSortFunction<T>;
+    /**
+     * Time: O(n * n!)
+     */
+    bogo: ExportSortFunction<T>;
 };

@@ -1,3 +1,4 @@
+import bogo from "./sorts/bogo";
 import bubble from "./sorts/bubble";
 import merge from "./sorts/merge";
 import quick from "./sorts/quick";
@@ -37,5 +38,9 @@ export default function sortism<T = any>(array: T[], func?: (v: T) => number) {
          * Time: O(n log n)
          */
         "quick": (order => quick(array, f, order)) as ExportSortFunction<T>,
+        /**
+         * Time: O(n * n!)
+         */
+        "bogo": (order => bogo(array, f, order) ) as ExportSortFunction<T>
     };
 }
