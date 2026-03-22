@@ -16,4 +16,8 @@ export default function sortism<T = any>(array: T[], func?: (v: T) => number): {
      * Time: O(n log n)
      */
     merge: ExportSortFunction<T>;
+    /**
+     * Time: O(n log n)
+     */
+    quick: ExportSortFunction<T>;
 };

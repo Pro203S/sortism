@@ -1,5 +1,6 @@
 import bubble from "./sorts/bubble";
 import merge from "./sorts/merge";
+import quick from "./sorts/quick";
 import selection from "./sorts/selection";
 /**
  * You can use sortism through this function.
@@ -19,5 +20,9 @@ export default function sortism(array, func) {
          * Time: O(n log n)
          */
         "merge": (order => merge(array, f, order)),
+        /**
+         * Time: O(n log n)
+         */
+        "quick": (order => quick(array, f, order)),
     };
 }
