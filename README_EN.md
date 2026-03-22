@@ -1,44 +1,46 @@
 # sortism
 
-[ENGLISH](./README_EN.md)
-
 ![license](https://img.shields.io/npm/l/sortism)
 ![stars](https://img.shields.io/github/stars/Pro203S/sortism)
 
-자신에게 맞는 방법으로 배열을 정렬해보세요!  
-이 모듈에는 여러가지의 정렬 방식이 있습니다.  
-자신에게 맞는 정렬을 사용하시면 됩니다.  
+Sort arrays in the way that suits you best!  
+This module provides various sorting methods.  
+Just choose the one that fits your needs.
 
-## 사용법
+## Usage
 
-1. 패키지 설치
-```sh
+1. Install the package
+
+``` sh
 npm i sortism
 
 bun i sortism
 ```
 
-2. 모듈 가져오기
-```typescript
+2. Import the module
+
+``` typescript
 import sortism from 'sortism';
 ```
 
-3. 정렬 사용하기
-```typescript
-const arr = [5,2,3,1,4];
+3. Use sorting
 
-// 버블 정렬, 오름차순
+``` typescript
+const arr = [5, 2, 3, 1, 4];
+
+// Bubble sort, ascending
 // 1,2,3,4,5
 sortism(arr).bubble("ascending");
 
-// 선택 정렬, 내림차순
+// Selection sort, descending
 // 5,4,3,2,1
 sortism(arr).selection("descending");
 ```
 
-## 자세한 사용법
+## Detailed Usage
 
-- Object에서 정렬하기
+-  Sorting objects
+
 ```typescript
 const arr = [
     {
@@ -61,7 +63,7 @@ const arr = [
     }
 ];
 
-// 버블 정렬, 오름차순
+// Bubble sort, ascending
 sortism(arr).bubble("ascending");
 
 /*
@@ -84,4 +86,4 @@ returns:
 */
 ```
 
-지금 바로 설치해서 사용해보세요!
+Install it now and start using it!
