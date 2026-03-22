@@ -11,12 +11,12 @@ export type InternalSortFunction = <T>(
     arr: T[],
     func: (v: T) => number,
     order: "ascending" | "descending",
-) => T[];
+) => T[] | Promise<T[]>;
 
 export type ExportSortFunction<T> = (
     order: "ascending" | "descending",
     func?: (v: T) => number,
-) => T[];
+) => T[] | Promise<T[]>;
 
 /**
  * You can use sortism through this function.
@@ -57,5 +57,8 @@ export default function sortism<T = any>(array: T[], func?: (v: T) => number) {
          * Time: O(N)
          */
         "thanos": (order => thanos(array, f, order)) as ExportSortFunction<T>,
+        /**
+         * Time: O(max(N, maxValue))
+         */
     };
 }

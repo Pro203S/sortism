@@ -1,5 +1,5 @@
-export type InternalSortFunction = <T>(arr: T[], func: (v: T) => number, order: "ascending" | "descending") => T[];
-export type ExportSortFunction<T> = (order: "ascending" | "descending", func?: (v: T) => number) => T[];
+export type InternalSortFunction = <T>(arr: T[], func: (v: T) => number, order: "ascending" | "descending") => T[] | Promise<T[]>;
+export type ExportSortFunction<T> = (order: "ascending" | "descending", func?: (v: T) => number) => T[] | Promise<T[]>;
 /**
  * You can use sortism through this function.
  */

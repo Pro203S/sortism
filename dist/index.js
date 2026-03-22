@@ -44,5 +44,8 @@ export default function sortism(array, func) {
          * Time: O(N)
          */
         "thanos": (order => thanos(array, f, order)),
+        /**
+         * Time: O(max(N, maxValue))
+         */
     };
 }
