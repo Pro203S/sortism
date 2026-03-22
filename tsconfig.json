@@ -8,14 +8,12 @@
     "jsx": "react-jsx",
     "allowJs": true,
     "rootDir": "./src",
-    "types": [
-      "./declarations.d.ts"
-    ],
     "outDir": "./dist",
 
     // Bundler mode
     "moduleResolution": "bundler",
     "verbatimModuleSyntax": true,
+    "declaration": true,
 
     // Best practices
     "strict": true,
@@ -28,5 +26,6 @@
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "noPropertyAccessFromIndexSignature": false
-  }
+  },
+  "exclude": ["tests", "dist"]
 }
